@@ -6,6 +6,7 @@
     font-family: 'Gloria Hallelujah';
 }
 
+
 .title{
     display: flex;
     justify-content: center;
@@ -56,11 +57,19 @@
 .buttons{
     width:fit-content;
     gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons >*{
     color:white; font-size: 1.3rem; background-color: #9023dc; border-radius:20px;
     transition: transform 0.1s ease;
+}
+
+.color-button{
+    background-color: black;
 }
 
 .buttons >*:hover{
