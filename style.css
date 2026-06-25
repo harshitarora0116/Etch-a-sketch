@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+*{
+    border:2px solid red;
+    background-color: purple;
+    font-family: 'Gloria Hallelujah';
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 100px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+}
+
+.drawing-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    gap : 40px;
+    padding:10px 30px;
+    background-color: rgb(114, 0, 114);
+}
+
+.drawing-area .canvas{
+    display: flex;
+    height: 448px;
+    width: 448px;
+    /* 448 = 64 * 8 */
+    background-color: white;
+    flex-wrap:wrap;
+}
+
+
+.drawing-area .sketches{
+    width : 200px;
+    height: 448px;
+}
+
+.grid-square{
+    width: 28px;
+    height: 28px;
+    border: 2px solid gray;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.grid-square:hover{
+    background-color: lightgray;
+}
+
+.buttons{
+    width:fit-content;
+}
+
+.buttons >*{
+    color:white; font-size: 1.3rem; background-color: #9023dc; border-radius:20px;
+    transition: transform 0.1s ease;
+}
+
+.buttons >*:hover{
+    transform: scale(1.1);
+}
+
+.buttons >*:active{
+    background-color: rgb(128, 87, 0);
+}
