@@ -15,6 +15,12 @@
     font-size: 3rem;
     font-weight: 800;
     color: white;
+    transition: transform 0.1s ease;
+}
+
+.title:hover{
+    transform: scale(1.1) rotate(-3deg);
+    text-decoration: underline;
 }
 
 .drawing-area{
@@ -24,7 +30,7 @@
     height: 500px;
     gap : 40px;
     padding:10px 30px;
-    background-color: rgb(114, 0, 114);
+    background-color: purple;
 }
 
 .drawing-area .canvas{
@@ -74,8 +80,21 @@
 
 .buttons >*:hover{
     transform: scale(1.1);
+    cursor:pointer;
 }
 
 .buttons >*:active{
     background-color: rgb(128, 87, 0);
+}
+
+.footer *{
+    background-color: #9023dc;
+    color: white;
+    transition: transform 0.1s ease;
+    font-size:1.2rem;
+    border-radius:10px;
+}
+
+.footer *:hover{
+    transform: scale(1.1);
 }
