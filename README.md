@@ -2,6 +2,8 @@
 
 A browser-based sketchpad built with vanilla HTML, CSS, and JavaScript.
 
+⚠️ Please view on laptop/desktop only. if you're on mobile, enable "Desktop site" in your browser or it will break. I haven't learnt responsive design yet
+
 [Live Demo](https://harshitarora0116.github.io/Etch-a-sketch/)
 
 ## Features
