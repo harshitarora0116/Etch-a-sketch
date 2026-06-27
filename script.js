@@ -53,7 +53,6 @@ for (let i = 0; i < canvasSize * canvasSize; i ++){
 canvas.addEventListener('mousedown', () => {isDrawing = true});
 document.addEventListener('mouseup', () => isDrawing = false);
 
-setInterval(() => {console.log(isDrawing);}, 1000);
 
 const brush = document.querySelector('.brush');
 brush.addEventListener('click', toggleBrush)
