@@ -3,6 +3,9 @@ let isDrawing = false;
 let isBrush = false;
 let isEraser = false;
 let color = 'black'
+let isInside = false;
+
+canvas.addEventListener('mouseenter', ()=>{isInside = true})
 
 let canvasSize = 16;
 // in number of squares per row
@@ -24,31 +27,33 @@ for (let i = 0; i < canvasSize * canvasSize; i ++){
     square.style.width = String(gridSize) + 'px';
     canvas.appendChild(square);
     square.addEventListener('mouseenter', ()=> {
-        if (isDrawing && isBrush) {
+        if (isDrawing && isBrush && isInside) {
             square.style.backgroundColor = color;
             square.style.border = 'none';
         }
     })
     square.addEventListener('mousedown', () => {
-        if (isBrush){
+        if (isBrush && isInside){
         square.style.backgroundColor = color;
         square.style.border = 'none';}
     })
     square.addEventListener('mouseenter', ()=> {
-        if (isDrawing && isEraser) {
+        if (isDrawing && isEraser && isInside) {
             square.style.backgroundColor = 'white';
             square.style.border = '2px solid gray';
         }
     })
     square.addEventListener('mousedown', () => {
-        if (isEraser){
+        if (isEraser && isInside){
         square.style.backgroundColor = 'white';
         square.style.border = '2px solid gray';}
     })
 }}
 
-canvas.addEventListener('mousedown', () => isDrawing = true);
-canvas.addEventListener('mouseup', () => isDrawing = false);
+canvas.addEventListener('mousedown', () => {isDrawing = true});
+document.addEventListener('mouseup', () => isDrawing = false);
+
+setInterval(() => {console.log(isDrawing);}, 1000);
 
 const brush = document.querySelector('.brush');
 brush.addEventListener('click', toggleBrush)
