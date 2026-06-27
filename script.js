@@ -4,9 +4,24 @@ let isBrush = false;
 let isEraser = false;
 let color = 'black'
 
-for (let i = 0; i < 16 * 16; i ++){
+let canvasSize = 16;
+// in number of squares per row
+// length of grid box, in pixels
+
+const canvasLength = 550;
+canvas.style.height = String(canvasLength) + 'px';
+canvas.style.width = String(canvasLength) + 'px';
+
+// canvasLength in px = canvasSize * gridSize
+
+function renderGrid(canvasSize){
+    canvas.innerHTML= '';
+    const gridSize = canvasLength / canvasSize;
+for (let i = 0; i < canvasSize * canvasSize; i ++){
     const square = document.createElement('div');
     square.classList.add('grid-square');
+    square.style.height = String(gridSize) + 'px';
+    square.style.width = String(gridSize) + 'px';
     canvas.appendChild(square);
     square.addEventListener('mouseenter', ()=> {
         if (isDrawing && isBrush) {
@@ -30,7 +45,7 @@ for (let i = 0; i < 16 * 16; i ++){
         square.style.backgroundColor = 'white';
         square.style.border = '2px solid gray';}
     })
-}
+}}
 
 canvas.addEventListener('mousedown', () => isDrawing = true);
 canvas.addEventListener('mouseup', () => isDrawing = false);
@@ -88,4 +103,18 @@ color_button.addEventListener('click', () => {
 color_picker.addEventListener('input', () => {
     color = color_picker.value;
     color_button.style.backgroundColor = color;
+})
+
+renderGrid(canvasSize)
+
+const sizeButton = document.querySelector('.size')
+sizeButton.addEventListener('click', () => {
+    let input = prompt('Enter canvas size (in units) between 1-100: ');
+    if(Number.isInteger(Number(input)) && Number(input) >= 1 && Number(input) <= 100){
+        canvasSize = Number(input);
+        renderGrid(canvasSize);
+    }
+    else{
+        alert('Please enter a valid number!');
+    }
 })

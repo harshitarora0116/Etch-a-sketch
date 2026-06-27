@@ -7,21 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div style="padding: 0px 80px;"><div class="title">ETCH-A-SKETCH!</div></div>
-    <div class="drawing-area">
+    <div style="padding: 0px 80px; display:flex; justify-content: center;"><div class="title">ETCH-A-SKETCH!</div></div>
+    <div class="drawing-area" style="padding:40px 10px;">
         <div class="buttons" style="display: flex; flex-direction:column;">
-            <button class="brush">BRUSH</button>
-            <button class="eraser">ERASER</button>
-            <button class="clear">CLEAR</button>
-            <button class="color-button"> COLOR🎨</button>
-            <input type="color" class="color-picker" value="#000000" style="display:none; position:absolute; visibility: hidden;">
+            <button class="brush button">BRUSH</button>
+            <button class="eraser button">ERASER</button>
+            <button class="clear button">CLEAR</button>
+            <button class="color-button button"> COLOR🎨</button>
+            <input type="color" class="color-picker button" value="#000000" style="display:none; position:absolute; visibility: hidden;">
         </div>
         <div class="canvas"></div>
         <div class="sketches"></div>
     </div>
     <div class="footer" style="display: flex; justify-content: center; gap: 50px;">
-        <button>SAVE</button>
-        <button>SIZE</button>
+        <button class="size button">SIZE</button>
+        <button class="save button">SAVE</button>
     </div>
     <script src="script.js"></script>
 </body>
